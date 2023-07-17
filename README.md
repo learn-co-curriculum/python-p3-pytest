@@ -12,16 +12,16 @@
 
 ## Key Vocab
 
-- **Unit Testing**: a development process where the smallest testable parts of
-  an application are independently tested for proper functionality.
-- **Test-Driven Development**: a development process where tests are written to
-  meet expectations for an application before code is written to meet those
-  expectations.
 - **Assertion**: a statement that determines if a wrapped statement produces a
   falsy value or exception. In either case, the assertion fails and the
   execution of code stops.
 - **Flag**: a method of providing options to modify commands from the command
   line. Flags begin with a dash `-`.
+- **Test-Driven Development**: a development process where tests are written to
+  meet expectations for an application before code is written to meet those
+  expectations.
+- **Unit Testing**: a development process where the smallest testable parts of
+  an application are independently tested for proper functionality.
 
 ***
 
