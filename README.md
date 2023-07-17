@@ -12,23 +12,23 @@
 
 ## Key Vocab
 
-- **Unit Testing**: a development process where the smallest testable parts of
-  an application are independently tested for proper functionality.
-- **Test-Driven Development**: a development process where tests are written to
-  meet expectations for an application before code is written to meet those
-  expectations.
 - **Assertion**: a statement that determines if a wrapped statement produces a
   falsy value or exception. In either case, the assertion fails and the
   execution of code stops.
 - **Flag**: a method of providing options to modify commands from the command
   line. Flags begin with a dash `-`.
+- **Test-Driven Development**: a development process where tests are written to
+  set expectations for an application before the code is written to meet those
+  expectations.
+- **Unit Testing**: a development process where the smallest testable parts of
+  an application are independently tested for proper functionality.
 
 ***
 
 ## Introduction
 
 pytest is a testing framework in Python that makes it easy to write short,
-easy-to-parse tests for applications ranging from a single function to huge
+easy-to-understand tests for applications ranging from a single function to huge
 libraries.
 
 ***
@@ -36,24 +36,27 @@ libraries.
 ## pytest Helps You Write Better Programs
 
 pytest is primarily used for a task called **unit testing**. Unit testing is a
-process in which the smallest parts of an application- no matter how large the
-application- are looked at individually and tested to make sure they operate as
+process in which the smallest parts of an application–no matter how large the
+application–are looked at individually and tested to make sure they work as
 intended. Testing is usually carried out by developers themselves, but sometimes
 by teams of quality assurance (QA) engineers as well.
 
 Unit tests will typically run on many functions at once with many different
-types of input. The number of failures with their descriptions will be returned
-to the tester so that they can update any non-functional code. Tests can be run
-quickly and as many times as desired. They can also be run on code that doesn't
-exist yet- this allows for a process called **test-driven development** (TDD),
-where failures are used to inform what code to write next.
+types of input. The number of failures, and descriptions of what failed,
+will be returned to the tester so that they can update any non-functional code.
+Tests can be run quickly and as many times as desired. They can also be run on
+code that doesn't exist yet. Writing tests before the code exists is a process
+called **test-driven development** (TDD), where test failures set expectations
+for what the code should do and help tell developers what code to write next.
+Test-driven development is popular as because any code written using TDD has
+tests, and makes future changes or improvements to that code less risky.
 
 ### An Example of TDD
 
-Let's say you want to write a function that interpolates into a string: given a
+Let's say you want to write a function that returns a string: when given a
 name, it should return "Welcome, name!"
 
-This is fairly simple to write, but even easier to test. Let's start by writing
+This function is fairly simple to write, but easier to test. Let's start by writing
 an assertion that will raise an Exception if the return value of our function
 is incorrect. Open up the Python shell and enter the following:
 
@@ -307,8 +310,8 @@ lib/testing/subdirectory/bool_test.py:7: AssertionError
 ```
 
 After looking at an overview of the tests, we dig deeper into the failures.
-pytest begins with the name of the test that failed, then shows the code from
-which the error arose. Along the left, look for an arrow (greater than) symbol
+pytest begins with the name of the test that failed, then shows the code that
+caused the error. Along the left, look for an arrow (greater than) symbol
 `>`. This shows the specific line of code that produced an error when
 interpreted.
 
@@ -342,10 +345,10 @@ number of passed tests, and the amount of time it took to run all tests.
 ## Customizing pytest Output
 
 When running commands from the command line, you often have the option to
-include **flags**. Flags are a way to modify your commands- they begin with
+include **flags**. Flags are a way to modify your commands–they begin with
 a dash `-`, and they're tailored to each command they're used with. For example,
 `cp` (copy) has a `-r` flag that specifies that the copy operation should be
-recursive- you need to use this to copy a directory and its contents. `tree`
+recursive–you need to use this to copy a directory and its contents. `tree`
 has a `-L` flag that allows you to specify the depth of subdirectories you
 want to include in its output.
 
@@ -355,8 +358,9 @@ most helpful to you.
 - `-x` is pytest's "exit" flag. This executes tests until one fails, then
   stops executing tests. This is very helpful for test-driven development, as
   you'll want to focus on developing to one test at a time.
-- `--pdb` opens the Python debugger when a test fails. It does not open the
-  prettier, improved `ipdb`, but its basic functions are very similar.
+- `--pdb` (with two dashes) opens the Python debugger when a test fails.
+  It does not open the prettier, improved `ipdb`, but its basic functions
+  are very similar.
 - `-s` tells pytest to show the full output for failed tests (i.e. `print()`
   statements).
 - `-q` (for quiet) shortens pytest's output. Running with the `-q` flag will
@@ -387,8 +391,8 @@ Submit your work with `git` when all tasks are complete.
 You’ve seen that pytest is a valuable tool with the Python labs you’ve been
 working on. Using pytest, we are able to construct tests that help ensure that
 you understand the concepts and can use them successfully. Well-written tests
-also help you understand more clearly what the expectations are for what your
-code will do and how it will function.
+also help you more clearly understand what the expectations are for your code
+and how it will function.
 
 But this is not the only reason to learn how to use pytest - it will also be
 valuable to you in your career as a Python software engineer. Testing packages
